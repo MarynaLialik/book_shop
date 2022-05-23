@@ -54,7 +54,10 @@ a {
     z-index: 1;
 }
 
-.cart {
+.cartFree {
+    min-height: 200px;
+    border: 1px solid orange;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;

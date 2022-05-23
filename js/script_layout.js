@@ -37,6 +37,11 @@ function addMain() {
     cartSum.className = "cartSum";
     cartSum.innerHTML = '0$';
 
+        
+    let cartFree = document.createElement('div');
+    cartFree.className = "cartFree";
+    cartFree.setAttribute("ondrop", "drop(event)"); 
+    cartFree.setAttribute("ondragover", "allowDrop(event)");
     let confirmation = document.createElement('div');
     confirmation.className = "confirmation";
     let confirmationAnchor = document.createElement('a');
@@ -53,6 +58,7 @@ function addMain() {
     cart.append(title2);
     cart.append(titlePrice);
     cart.append(cartSum);
+    cartContainer.append(cartFree);
     cartContainer.append(confirmation);
     confirmation.append(confirmationAnchor); 
     confirmationAnchor.append(confirmButton);
@@ -67,6 +73,9 @@ function addBook(item, index) {
     let book = document.createElement('div');
     book.classList.add('book');
     book.classList.add('book-'+index);
+    book.setAttribute("draggable","true"); 
+    book.setAttribute("ondragstart","drag(event)");
+    book.setAttribute("id", index);
     let bookIcon = document.createElement('div');
     bookIcon.className = "bookIcon";
     let bookOptions = document.createElement('div'); 
@@ -99,7 +108,7 @@ function createPopupDescription(item, index){
     let button = document.createElement('button');
     button.innerHTML = 'Close';
     button.addEventListener("click", (e)=>{
-        console.log('closed button'+index);
+       // console.log('closed button'+index);
         closePopUp(e, index);
     })
     popupText.append(button);  
@@ -163,7 +172,7 @@ function addToCart(item) {
     book.append(createBookInfo(item));
     bookOptions.append(bookRemove);
     book.append(bookOptions);
-    document.querySelector('.cart').append(book);
+    document.querySelector('.cartFree').append(book);
     document.querySelector('.cartSum').innerHTML = `${cartSumValue}\$`;
     console.log('in cart book-' +cartIndex);
     return
@@ -178,7 +187,18 @@ function removeItem (item, cartIndex) {
     document.querySelector('.cartSum').innerHTML = `${cartSumValue}\$`;
 }
 
-function confirmOrder() {
-
-
+//drag&drop
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+  
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+  
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    document.querySelector(`.book-${data} .bookCart`).click();
+   // ev.target.appendChild(document.getElementById(data));
 }
