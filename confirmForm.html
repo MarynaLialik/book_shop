@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+  </head>
+  <body class="main-background">
+    <header class='header'>
+        <h1>Maryna's online book shop 
+            <br/>Delivery form:</h1>
+    </header>
+    <main class="mainConfirmation">
+        <div class="containerDelivery">
+            <h2>Please fill the data</h2>
+            <form class="form"  onsubmit="return false">
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" placeholder="your name" pattern="[a-zA-Zа-яА-я]+" minlength="4" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="surname">Surname: </label>
+                    <input type="text" id="surname" name="surname" placeholder="your surname" pattern="[a-zA-Zа-яА-я]+" minlength="5" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="deliverydate:">Delivery date: </label>
+                    <input type="date" id="deliverydate" name="deliverydate" min="2022-05-24" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="street:">Street: </label>
+                    <input type="text" id="street" name="street" placeholder="street" pattern="[a-zA-Zа-яА-я0-9]+" minlength="5" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="housenumber:">House number: </label>
+                    <input type="text" id="housenumber" name="housenumber" placeholder="house number"pattern="[0-9]+" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="flatnumber:">Flat number: </label>
+                    <input type="text" id="flatnumber" name="flatnumber" placeholder="flat number" pattern="^[1-9]\d*(?: ?(?:[1-9]|[-]?\d+[1-9]?))?$" required>
+                    <span></span>
+                </div>
+                <div>
+                    <p>Choose the payment type:</p>
+                
+                    <input type="radio" id="card" name="paymenttype" value="card">
+                    <label for="card">Cash</label>
+                
+                    <input type="radio" id="card" name="paymenttype" value="card">
+                    <label for="card">Card</label>
+                    <span></span>
+                </div>
+                <br/>
+        
+                <fieldset>
+                    <legend>Choose 2 gifts:</legend>
+                    <div>
+                      <input type="checkbox" id="pack" name="pack">
+                      <label for="pack">pack as a gift</label>
+                    </div> 
+                    <div>
+                      <input type="checkbox" id="postcard" name="postcard">
+                      <label for="postcard">add postcard</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="discount" name="discount">
+                        <label for="discount">provide 2% discount to the next time</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="pen" name="pen">
+                        <label for="pen">branded pen or pencil</label>
+                    </div>
+                    <span></span>
+                </fieldset>
+                <br/>
+                
+                  
+                <div>
+                    <button class="completeButton" type="click" disabled>Complete</button>
+                </div>
+            </form>  
+        </div>  
+        <div class="confirm-info" >
+
+        </div>
+    </main>     
+    <script src="js/confirmForm.js"></script>
+  </body>
+</html>
