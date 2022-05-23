@@ -1,0 +1,244 @@
+.main-background {
+    background: url(images/wp2036933-books-wallpapers.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    margin: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    padding: 10px;
+    color: #76713c;
+    background-color: #f4edc5;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.containerMain {
+   display: flex;
+   justify-content: space-between;
+   margin: 30px 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #6d48225e;
+    border: 1px solid  #6d48225e;
+    border-radius: 10px;
+    opacity: 0.7;
+    width: 40%;
+    padding: 20px;
+}
+
+.cartContainer {
+    background-color: #6d48225e;
+    border: 1px solid #6d48225e;
+    border-radius: 10px;
+    opacity: 0.7;
+    width: 40%;
+    padding: 20px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: beige;
+    margin: 0; 
+}
+
+h4, h5 {
+    margin: 7px;
+}
+
+.book {
+    display: flex;
+    justify-content: space-between;
+    background-color: beige;
+    border: 1px solid #d6e9c6;
+    border-radius: 10px;
+    color: #6d4822;
+    padding: 5px; 
+}
+
+.bookIcon {
+    background: url(images/book-icon.png);
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: contain;
+    opacity: 0.9;
+    width: 20%;
+    max-height: 67px;
+    /* align-self: flex-end; */
+}
+
+.bookOptions {
+    width: 10%;
+}
+.bookCart{
+    background: url(images/buy-icon.png); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.9;
+    height: 30px;
+    margin-bottom: 5px;
+
+}
+
+.bookShowMore, .confirmButton {
+    background-color: beige;
+    border: 3px solid orange;
+    border-radius: 8px;
+    color: orange;
+    text-align: center;
+}
+
+.confirmButton {
+    margin: 10px 0;
+    height: 35px;
+    line-height: 35px;
+    font-size: 24px;
+
+}
+
+
+.bookRemove{
+    background-color: beige;
+    border: 3px solid orange;
+    border-radius: 8px;
+    color: orange;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+.bookInfo {
+    width: 70%;
+}
+
+
+
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popupText {
+    visibility: hidden;
+    width: 400px;
+    background-color: #6d4822;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 190%;
+    left: -180px;
+
+  }
+  
+   .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  
+
+
+
+/* confirmForm page*/
+.mainConfirmation {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+.containerDelivery {
+    margin: 70px 0; 
+    background-color: #6d48225e;
+    border: 1px solid  #6d48225e;
+    border-radius: 10px;
+    opacity: 0.7;
+    width: 40%;
+    padding: 20px;
+    justify-content: center;
+}
+
+input {
+  margin: 5px 0;
+  padding: 5px 10px;
+}
+
+.invalid input
+{
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.invalid input + span:after {
+    position: absolute; content: 'The field is invalid';
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.form {
+    background-color: beige;
+    border: 1px solid #d6e9c6;
+    border-radius: 10px;
+    color: #6d4822;
+    margin: 30px; 
+    padding: 20px;
+    font-weight: bold;
+}
+
+.completeButton:disabled {
+    border: 3px solid grey;
+    color: grey; 
+}
+.completeButton {
+    background-color: beige;
+    border: 3px solid orange;
+    border-radius: 8px;
+    color: orange;
+    text-align: center;
+    height: 35px;
+    line-height: 20px;
+    font-size: 20px;
+    vertical-align: middle;
+}
